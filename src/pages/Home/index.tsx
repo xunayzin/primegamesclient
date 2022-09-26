@@ -1,5 +1,7 @@
+import * as S from "./style";
+
 const Home = () => {
-    return(<div>Componente Home</div>);
-  }
-  
-  export default Home;
+	return <S.Home></S.Home>;
+};
+
+export default Home;
