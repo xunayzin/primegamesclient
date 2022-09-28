@@ -11,7 +11,7 @@ const Home = () => {
           <S.HomeHeaderDetails>
             <div>
               <S.HomeHeaderDetailsLogo>
-                Prime Games from Xbox{" "}
+                PrimeGames from Xbox{" "}
               </S.HomeHeaderDetailsLogo>
               <S.HomeHeaderDetailsDate>
                 Aqui ficará a data
