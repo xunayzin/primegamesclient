@@ -1,4 +1,5 @@
 import logo from "assets/imgs/logo.png";
+import { ReactComponent as Logout } from "assets/icons/logout.svg";
 import * as S from "./style";
 
 const Menu = () => {
@@ -12,6 +13,9 @@ const Menu = () => {
           <S.MenuItemButton></S.MenuItemButton>
         </S.MenuItem>
       </nav>
+      <S.MenuItemLogout>
+        <Logout />
+      </S.MenuItemLogout>
     </S.Menu>
   );
 };
