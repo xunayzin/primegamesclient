@@ -42,7 +42,7 @@ export const MenuLogo = styled.div`
     justify-content: center;
     padding: 0 0 20px 0;
     img {
-      height: 80px;
+      height: 30px;
     }
   `}
 `;
