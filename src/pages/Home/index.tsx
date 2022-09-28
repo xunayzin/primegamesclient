@@ -1,9 +1,11 @@
+import Menu from "components/menu";
 import * as S from "./style";
 import { ReactComponent as Search } from "assets/icons/search.svg";
 
 const Home = () => {
   return (
     <S.Home>
+      <Menu />
       <S.HomeContent>
         <header>
           <S.HomeHeaderDetails>
