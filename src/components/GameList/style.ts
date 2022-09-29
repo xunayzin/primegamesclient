@@ -36,6 +36,7 @@ export const GameItemName = styled.h3`
 		text-align: center;
 		max-width: 90%;
 		margin: 0;
+        color: ${theme.colors.primaryColor};
 	`}
 `;
 
@@ -45,7 +46,7 @@ export const GameItemGenre = styled.strong`
 		text-align: center;
 		max-width: 90%;
 		margin: 0;
-		color: ${theme.colors.primaryColor};
+		
 	`}
 `;
 

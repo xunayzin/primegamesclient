@@ -6,6 +6,7 @@ import { navigationItems } from "data/navigation";
 import { DateTime } from "luxon";
 import GameItemList from "components/GameItemList";
 import GameItem from "components/GameList";
+import FavoriteDetails from "components/FavoriteDetails";
 
 const Home = () => {
   const dateDescription = DateTime.now().toLocaleString({
@@ -45,7 +46,7 @@ const Home = () => {
         </div>
       </S.HomeContent>
       <aside>
-        <p>Favoritos</p>
+        <FavoriteDetails />
       </aside>
     </S.Home>
   );
