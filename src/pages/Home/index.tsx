@@ -4,6 +4,7 @@ import { ReactComponent as Search } from "assets/icons/search.svg";
 import { RoutePath } from "types/routes";
 import { navigationItems } from "data/navigation";
 import { DateTime } from "luxon";
+import GameItemList from "components/GameItemList";
 
 const Home = () => {
   const dateDescription = DateTime.now().toLocaleString({
@@ -36,7 +37,7 @@ const Home = () => {
             <b>Jogos</b>
           </S.HomeGameTitle>
           <S.HomeGameList>
-            <p>Lista de jogos</p>
+            <GameItemList></GameItemList>
           </S.HomeGameList>
         </div>
       </S.HomeContent>
