@@ -57,7 +57,7 @@ export const FavoriteDetailsListGap = styled.div`
 	${({ theme }) => css`
 		height: 90px;
 		background: ${theme.colors.baseBg1};
-		bFavorite-radius: 8px;
+		border-radius: 8px;
 	`}
 `;
 

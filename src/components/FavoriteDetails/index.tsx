@@ -1,5 +1,7 @@
 import * as S from "./style";
 import ButtonToggle from "components/ButtonToggle";
+import FavoriteItemList from "components/FavoriteItemList";
+import ButtonLarge from "components/ButtonLarge";
 
 const FavoriteDetails = () => {
   return (
@@ -10,7 +12,25 @@ const FavoriteDetails = () => {
         <ButtonToggle active={false} value="Gêneros Favoritos" />
       </S.FavoriteDetailsButtonGroup>
       <S.FavoriteDetailsList>
-        <p>Itens</p>
+        <FavoriteItemList
+          header={
+            <S.FavoriteDetailsListTitle>
+              <h4>mmmm</h4>
+              <h4>hhhhh</h4>
+              <h4>yyyy</h4>
+            </S.FavoriteDetailsListTitle>
+          }
+          list={"Lista de Itens"}
+          footer={
+            <S.FavoriteDetailsListFooter>
+              <S.FavoriteDetailsListFooterRow>
+                <span>zzzzz</span>
+                <span>xxxxx</span>
+              </S.FavoriteDetailsListFooterRow>
+              <ButtonLarge value="Adicionar aos Favoritos" />
+            </S.FavoriteDetailsListFooter>
+          }
+        />
       </S.FavoriteDetailsList>
     </S.FavoriteDetails>
   );
