@@ -2,6 +2,7 @@ import * as S from "./style";
 import ButtonToggle from "components/ButtonToggle";
 import FavoriteItemList from "components/FavoriteItemList";
 import ButtonLarge from "components/ButtonLarge";
+import FavoriteItem from "components/FavoriteItem";
 
 const FavoriteDetails = () => {
   return (
@@ -20,7 +21,7 @@ const FavoriteDetails = () => {
               <h4>yyyy</h4>
             </S.FavoriteDetailsListTitle>
           }
-          list={"Lista de Itens"}
+          list={<FavoriteItem />}
           footer={
             <S.FavoriteDetailsListFooter>
               <S.FavoriteDetailsListFooterRow>
