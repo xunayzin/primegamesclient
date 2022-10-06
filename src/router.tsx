@@ -5,13 +5,15 @@ import Login from "pages/Login";
 import ManageGames from "components/ManageGames";
 import ManageUsers from "components/ManageUsers";
 import Settings from "pages/Settings";
+import ManageGenres from "components/ManageGenres";
 
 const Router = () => {
   return (
     <Routes>
       <Route path={RoutePath.LOGIN} element={<Login />} />
       <Route path={RoutePath.HOME} element={<Home />} />
-      <Route path={RoutePath.SETTINGS} element={<Settings />}>
+		  <Route path={RoutePath.SETTINGS} element={<Settings />}>
+		  <Route path={RoutePath.SETTINGS_GENRE} element={<ManageGenres />} />
         <Route
           path={RoutePath.SETTINGS_GAMES}
           element={<ManageGames />}
