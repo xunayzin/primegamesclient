@@ -1,4 +1,4 @@
-import { ReactComponent as Market } from "assets/icons/market.png";
+import { ReactComponent as Market } from "assets/icons/market.svg";
 import { ReactComponent as Info } from "assets/icons/info.svg";
 import { ReactComponent as Users } from "assets/icons/users.svg";
 import * as S from "./style";
@@ -10,13 +10,13 @@ const NavColumn = () => {
       icon: <Market />,
       title: "Customize ",
       subtitle: "Adicione generos, configure nomes",
-      navigation: RoutePath.SETTINGS_TABLES,
+      navigation: RoutePath.SETTINGS_GENRE,
     },
     {
       icon: <Info />,
       title: "Gerenciar Jogos",
       subtitle: "Edite os jogos",
-      navigation: RoutePath.SETTINGS_PRODUCTS,
+      navigation: RoutePath.SETTINGS_GAMES,
     },
     {
       icon: <Users />,

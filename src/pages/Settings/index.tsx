@@ -1,4 +1,4 @@
-import Menu from "components/Menu";
+import Menu from "components/menu";
 import { RoutePath } from "types/routes";
 import { navigationItems } from "data/navigation";
 import * as S from "./style";
