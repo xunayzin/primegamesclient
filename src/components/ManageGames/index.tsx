@@ -1,4 +1,5 @@
 import { ReactComponent as Add } from "assets/icons/add.svg";
+import EditGame from "components/EditGame";
 import { HTMLAttributes } from "react";
 import * as S from "./style";
 
@@ -24,7 +25,7 @@ const ManageGames = ({ ...props }: ManageGamesProps) => {
           <S.EditForm type="text" placeholder="Descrição" />
           <S.EditForm type="url" placeholder="Imagem" />
         </S.AddCard>
-        {"Componente EditProduct"}
+        <EditGame />
       </S.ManageGamesContent>
       <S.ManageGamesActions>
         <S.ManageGamesActionsCancel>Cancelar</S.ManageGamesActionsCancel>

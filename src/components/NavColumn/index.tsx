@@ -16,14 +16,14 @@ const NavColumn = ({ activeRoute }: NavColumnProps) => {
   const items = [
     {
       icon: <Market />,
-      title: "Customize suas mesas",
-      subtitle: "Adicione mesas, configure nomes",
+      title: "Customize",
+      subtitle: "Adicione jogos e gêneros",
       navigation: RoutePath.SETTINGS_GENRE,
     },
     {
       icon: <Info />,
-      title: "Gerenciar Produtos",
-      subtitle: "Edite os pratos, preços e etc.",
+      title: "Gerenciar Jogos",
+      subtitle: "Edite os jogos, gêneros",
       navigation: RoutePath.SETTINGS_GAMES,
     },
     {
