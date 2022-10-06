@@ -48,7 +48,7 @@ export const FavoriteItemRight = styled.div`
   `}
 `;
 
-export const FavoriteItemRightTotalGenre = styled.span`
+export const FavoriteItemRightTotalGames = styled.span`
   ${({ theme }) => css`
     ${theme.mixins.bodyStyle()};
     font-weight: 500;

@@ -1,4 +1,5 @@
 import * as S from "./style";
+import { ReactComponent as Trash } from "assets/icons/trash.svg";
 
 const FavoriteItem = () => {
   return (
@@ -16,6 +17,12 @@ const FavoriteItem = () => {
           </S.FavoriteItemGameDetails>
         </S.FavoriteItemGame>
       </S.FavoriteItemLeftTop>
+      <S.FavoriteItemRight>
+        <S.FavoriteItemRightTotalGames>1</S.FavoriteItemRightTotalGames>
+        <S.FavoriteItemRightTrash>
+          <Trash />
+        </S.FavoriteItemRightTrash>
+      </S.FavoriteItemRight>
     </S.FavoriteItem>
   );
 };
