@@ -1,30 +1,36 @@
 import Menu from "components/menu";
-import * as S from "./style";
+import { DateTime } from "luxon";
 import { ReactComponent as Search } from "assets/icons/search.svg";
+import * as S from "./style";
 import { RoutePath } from "types/routes";
 import { navigationItems } from "data/navigation";
-import { DateTime } from "luxon";
 import GameItemList from "components/GameItemList";
-import GameItem from "components/GameList";
 import FavoriteDetails from "components/FavoriteDetails";
-import Overlay from "components/Overlay";
+
+import { useNavigate } from "react-router-dom";
+import GameItem from "components/GameList";
 
 const Home = () => {
   const dateDescription = DateTime.now().toLocaleString({
     ...DateTime.DATE_SHORT,
     weekday: "long",
   });
+  const navigate = useNavigate();
+  const handleNavigation = (path: RoutePath) => navigate(path);
 
   return (
     <S.Home>
-      <Menu active={RoutePath.HOME} navItems={navigationItems} />
+      <Menu
+        active={RoutePath.HOME}
+        navItems={navigationItems}
+        onNavigate={handleNavigation}
+        onLogout={() => navigate(RoutePath.LOGIN)}
+      />
       <S.HomeContent>
         <header>
           <S.HomeHeaderDetails>
             <div>
-              <S.HomeHeaderDetailsLogo>
-                PrimeGames from Xbox{" "}
-              </S.HomeHeaderDetailsLogo>
+              <S.HomeHeaderDetailsLogo>PRIMEGAMES from XBOX</S.HomeHeaderDetailsLogo>
               <S.HomeHeaderDetailsDate>
                 {dateDescription}
               </S.HomeHeaderDetailsDate>
@@ -49,9 +55,6 @@ const Home = () => {
       <aside>
         <FavoriteDetails />
       </aside>
-      <Overlay>
-        
-      </Overlay>
     </S.Home>
   );
 };

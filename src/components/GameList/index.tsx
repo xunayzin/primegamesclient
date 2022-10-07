@@ -1,4 +1,5 @@
 import * as S from "./style";
+import { games } from "mocks/game";
 
 const GameItem = () => {
   return (

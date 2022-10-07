@@ -1,3 +1,4 @@
+import { games } from "mocks/game";
 import * as S from "./style";
 interface GameItemListProps {
   children: React.ReactNode;
@@ -10,7 +11,7 @@ const GameItemList = ({ children }: GameItemListProps) => {
         <S.GameItemListHeaderTitle>Escolha seu jogo</S.GameItemListHeaderTitle>
         <S.GameItemListHeaderSelect>
           <option value="default">Selecionar</option>
-          <option value="">xxxxx</option>
+          {games.map((game) => { return (<option value="">{ game.title}</option>)})}
         </S.GameItemListHeaderSelect>
       </S.GameItemListHeader>
       <S.GameItemList>{children}</S.GameItemList>

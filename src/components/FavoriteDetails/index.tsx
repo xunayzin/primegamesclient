@@ -14,20 +14,20 @@ const FavoriteDetails = () => {
       </S.FavoriteDetailsButtonGroup>
       <S.FavoriteDetailsList>
         <FavoriteItemList
-          header={
-            <S.FavoriteDetailsListTitle>
-              <h4>mmmm</h4>
-              <h4>hhhhh</h4>
-              <h4>yyyy</h4>
-            </S.FavoriteDetailsListTitle>
-          }
+          // header={
+          //   <S.FavoriteDetailsListTitle>
+          //     <h4>mmmm</h4>
+          //     <h4>hhhhh</h4>
+          //     <h4>yyyy</h4>
+          //   </S.FavoriteDetailsListTitle>
+          // }
           list={<FavoriteItem />}
           footer={
             <S.FavoriteDetailsListFooter>
-              <S.FavoriteDetailsListFooterRow>
+              {/* <S.FavoriteDetailsListFooterRow>
                 <span>zzzzz</span>
                 <span>xxxxx</span>
-              </S.FavoriteDetailsListFooterRow>
+              </S.FavoriteDetailsListFooterRow> */}
               <ButtonLarge value="Adicionar aos Favoritos" />
             </S.FavoriteDetailsListFooter>
           }

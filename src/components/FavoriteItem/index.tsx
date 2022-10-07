@@ -1,5 +1,7 @@
 import * as S from "./style";
 import { ReactComponent as Trash } from "assets/icons/trash.svg";
+import { games } from "mocks/game";
+import { genres } from "mocks/genre";
 
 const FavoriteItem = () => {
   return (
