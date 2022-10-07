@@ -1,26 +1,43 @@
 import * as S from "./style";
 import { ReactComponent as Trash } from "assets/icons/trash.svg";
-import { games } from "mocks/game";
-import { genres } from "mocks/genre";
+import { ButtonHTMLAttributes, useEffect, useState } from "react";
+import { GameResponse } from "types/Game";
+import { GenreItemType } from "types/GenreItemType";
 
-const FavoriteItem = () => {
+type DivType = ButtonHTMLAttributes<HTMLDivElement>;
+
+export type FavoriteItemProps = {
+  game: GameResponse;
+  genre: GenreItemType["genre"];
+  quantity: number
+  observation?: string;
+} & DivType;
+
+const FavoriteItem = ({
+  game,
+  genre,
+  quantity = game.idNumber ,
+  observation = "",
+  ...props
+}: FavoriteItemProps) => {
+  const [quantityState, setQuantityState] = useState(quantity);
   return (
-    <S.FavoriteItem>
+    <S.FavoriteItem {...props} role="listitem">
       <S.FavoriteItemLeftTop>
         <S.FavoriteItemGame>
-          <S.FavoriteItemGameImage src="" alt="nome do jogo" />
+          <S.FavoriteItemGameImage src={game.coverImageUrl} alt={game.title} />
           <S.FavoriteItemGameDetails>
             <S.FavoriteItemGameDetailsName>
-              Nome do jogo
+            {game.title}
             </S.FavoriteItemGameDetailsName>
             <S.FavoriteItemGameDetailsGenre>
-              Gênero
+            {genre}
             </S.FavoriteItemGameDetailsGenre>
           </S.FavoriteItemGameDetails>
         </S.FavoriteItemGame>
       </S.FavoriteItemLeftTop>
       <S.FavoriteItemRight>
-        <S.FavoriteItemRightTotalGames>1</S.FavoriteItemRightTotalGames>
+        <S.FavoriteItemRightTotalGames>{Number(quantityState)}</S.FavoriteItemRightTotalGames>
         <S.FavoriteItemRightTrash>
           <Trash />
         </S.FavoriteItemRightTrash>

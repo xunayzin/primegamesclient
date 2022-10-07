@@ -3,8 +3,16 @@ import ButtonToggle from "components/ButtonToggle";
 import FavoriteItemList from "components/FavoriteItemList";
 import ButtonLarge from "components/ButtonLarge";
 import FavoriteItem from "components/FavoriteItem";
+import { GenreItemType } from "types/GenreItemType";
+import { HTMLAttributes, useEffect, useState } from "react";
+import { GameResponse } from "types/Game";
 
-const FavoriteDetails = () => {
+type FavoriteDetailsType = HTMLAttributes<HTMLDivElement>;
+type FavoriteDetailsProps = {
+  favorites: GenreItemType[];
+} & FavoriteDetailsType;
+
+const FavoriteDetails = ({ favorites }: FavoriteDetailsProps) => {
   return (
     <S.FavoriteDetails>
       <S.FavoriteDetailsTitle>FAVORITOS</S.FavoriteDetailsTitle>
@@ -21,7 +29,20 @@ const FavoriteDetails = () => {
           //     <h4>yyyy</h4>
           //   </S.FavoriteDetailsListTitle>
           // }
-          list={<FavoriteItem />}
+          list={
+            Boolean(favorites.length) ? (
+              favorites.map((item, index) => (
+                <FavoriteItem
+                  game={item.game}
+                  quantity={item.game.idNumber}
+                  genre={item.genre}
+                  key={`FavoriteDetails-${index}`}
+                />
+              ))
+            ) : (
+              <S.FavoriteDetailsListGap />
+            )
+          }
           footer={
             <S.FavoriteDetailsListFooter>
               {/* <S.FavoriteDetailsListFooterRow>

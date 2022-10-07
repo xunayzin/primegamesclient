@@ -6,9 +6,11 @@ import { RoutePath } from "types/routes";
 import { navigationItems } from "data/navigation";
 import GameItemList from "components/GameItemList";
 import FavoriteDetails from "components/FavoriteDetails";
-
+import { games } from "mocks/game";
+import { genres } from "mocks/genre";
 import { useNavigate } from "react-router-dom";
-import GameItem from "components/GameList";
+import GameItem from "components/GameItem";
+import { GameResponse } from "types/Game";
 
 const Home = () => {
   const dateDescription = DateTime.now().toLocaleString({
@@ -17,6 +19,7 @@ const Home = () => {
   });
   const navigate = useNavigate();
   const handleNavigation = (path: RoutePath) => navigate(path);
+  const handleSelection = (game: GameResponse) => {};
 
   return (
     <S.Home>
@@ -47,13 +50,20 @@ const Home = () => {
           </S.HomeGameTitle>
           <S.HomeGameList>
             <GameItemList>
-              <GameItem />
+            {Boolean(games.length) &&
+                games.map((game, index) => (
+                  <GameItem
+                    game={game}
+                    key={`GameItem-${index}`}
+                    onSelect={handleSelection}
+                  />
+                ))}
             </GameItemList>
           </S.HomeGameList>
         </div>
       </S.HomeContent>
       <aside>
-        <FavoriteDetails />
+        <FavoriteDetails favorites={genres} />
       </aside>
     </S.Home>
   );

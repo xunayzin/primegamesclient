@@ -40,7 +40,7 @@ export const GameItemName = styled.h3`
 	`}
 `;
 
-export const GameItemGenre = styled.strong`
+export const GameItemYear = styled.strong`
 	${({ theme }) => css`
 		${theme.mixins.bodyStyle()}
 		text-align: center;
