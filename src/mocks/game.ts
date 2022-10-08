@@ -1,6 +1,6 @@
 import { GameResponse } from "types/Game";
 
-export const games: GameResponse[] = [
+export const mocksgames: GameResponse[] = [
   {
     id: "db005519-52fc-4f5c-a6fd-6a8dbbc93c79",
     title: "God Of War",
@@ -13,9 +13,10 @@ export const games: GameResponse[] = [
     createdAt: "2022-06-15T02:05:27.570Z",
     updatedAt: "2022-06-15T02:05:27.571Z",
     idNumber: 1,
+    genre: "RPG",
   },
-  {
-    id: "d419e3e0-dda6-406b-919c-3811d746e2b6",
+  
+    {id: "d419e3e0-dda6-406b-919c-3811d746e2b6",
     title: "Assassin's Creed Valhalla",
     coverImageUrl:
       "https://image.api.playstation.com/vulcan/ap/rnd/202008/1318/8XGEPtD1xoasK0FYkYNcCn1z.png",
@@ -27,9 +28,10 @@ export const games: GameResponse[] = [
     createdAt: "2022-07-03T22:33:19.010Z",
     updatedAt: "2022-07-03T22:33:19.011Z",
     idNumber: 1,
-  },
-  {
-    id: "51736e8c-cb3e-4761-9f28-70c4da1aa641",
+    genre:"Aventura",}
+  ,
+  
+    {id: "51736e8c-cb3e-4761-9f28-70c4da1aa641",
     title: "Call of Duty: Modern Warfare",
     coverImageUrl:
       "https://image.api.playstation.com/cdn/UP0002/CUSA15240_00/iteYPVeiDDVwzYsnL9RZBCDhhkBTLSD8.png",
@@ -41,9 +43,10 @@ export const games: GameResponse[] = [
     createdAt: "2022-07-03T22:36:41.517Z",
     updatedAt: "2022-07-03T22:36:41.518Z",
     idNumber: 1,
-  },
-  {
-    id: "0ae6ee8a-b62d-4e6e-92b8-06154fd9017e",
+    genre:"FPS",}
+ ,
+ 
+    {id: "0ae6ee8a-b62d-4e6e-92b8-06154fd9017e",
     title: "Demon's Souls",
     coverImageUrl:
       "https://image.api.playstation.com/vulcan/img/rnd/202011/1717/GemRaOZaCMhGxQ9dRhnQQyT5.png",
@@ -55,9 +58,10 @@ export const games: GameResponse[] = [
     createdAt: "2022-07-03T22:40:22.264Z",
     updatedAt: "2022-07-03T22:40:22.266Z",
     idNumber: 1,
-  },
-  {
-    id: "5575281c-2fdc-4818-a705-6314e51d1855",
+    genre: "RPG",}
+ ,
+  
+    {id: "5575281c-2fdc-4818-a705-6314e51d1855",
     title: "Elden Ring",
     coverImageUrl:
       "https://image.api.playstation.com/vulcan/ap/rnd/202110/2000/aGhopp3MHppi7kooGE2Dtt8C.png",
@@ -69,9 +73,9 @@ export const games: GameResponse[] = [
     createdAt: "2022-07-03T22:43:30.087Z",
     updatedAt: "2022-07-03T22:43:30.088Z",
     idNumber: 1,
-  },
-  {
-    id: "980ca3c7-685b-4048-a06b-eaa75daed9ec",
+    genre: "RPG"},
+
+    {id: "980ca3c7-685b-4048-a06b-eaa75daed9ec",
     title: "Resident Evil 7: Biohazard",
     coverImageUrl:
       "https://image.api.playstation.com/cdn/UP0102/CUSA04772_00/cxd9vkFOAHVwwYG7lQKENGkrfyoAChNh.png",
@@ -83,5 +87,6 @@ export const games: GameResponse[] = [
     createdAt: "2022-07-03T22:51:09.949Z",
     updatedAt: "2022-07-03T22:51:09.950Z",
     idNumber: 1,
-  },
+    genre: "Teror"},
+
 ];

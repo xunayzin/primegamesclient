@@ -2,20 +2,17 @@ import * as S from "./style";
 import { GameResponse } from "types/Game";
 
 type GameItemProps = {
-  game: GameResponse
-  onSelect: (data: GameResponse) => void
-}
+  games: GameResponse;
+};
 
-const GameItem = ({ game, onSelect}: GameItemProps) => {
+const GameItem = ({ games }: any) => {
   return (
-    <S.GameItem role="listitem" onClick={()=> onSelect(game)}>
-      <S.GameItemImage src={game.coverImageUrl} alt={game.title} />
+    <S.GameItem role="listitem">
+      <S.GameItemImage src={games.coverImageUrl} alt={games.title} />
       <div>
-        <S.GameItemName>{game.title}</S.GameItemName>
-        <S.GameItemYear>{game.year}</S.GameItemYear>
-        <S.GameItemDescription>
-         {game.description}
-        </S.GameItemDescription>
+        <S.GameItemName>{games.title}</S.GameItemName>
+        <S.GameItemYear>{games.year}</S.GameItemYear>
+        <S.GameItemDescription>{games.description}</S.GameItemDescription>
       </div>
     </S.GameItem>
   );

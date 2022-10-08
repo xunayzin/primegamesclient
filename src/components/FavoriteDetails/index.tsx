@@ -3,22 +3,40 @@ import ButtonToggle from "components/ButtonToggle";
 import FavoriteItemList from "components/FavoriteItemList";
 import ButtonLarge from "components/ButtonLarge";
 import FavoriteItem from "components/FavoriteItem";
-import { GenreItemType } from "types/GenreItemType";
+
 import { HTMLAttributes, useEffect, useState } from "react";
+import { FavoriteType } from "types/FavoriteType";
 import { GameResponse } from "types/Game";
 
 type FavoriteDetailsType = HTMLAttributes<HTMLDivElement>;
+
 type FavoriteDetailsProps = {
-  favorites: GenreItemType[];
+  favorites: GameResponse[];
+  onChangeActiveFavoriteType: (data: FavoriteType) => void;
+  onRemoveItem: (id: string) => void;
+  activeFavoriteType: FavoriteType;
 } & FavoriteDetailsType;
 
-const FavoriteDetails = ({ favorites }: FavoriteDetailsProps) => {
+const FavoriteDetails = ({
+  favorites,
+  onChangeActiveFavoriteType,
+  onRemoveItem,
+  activeFavoriteType,
+}: FavoriteDetailsProps) => {
   return (
     <S.FavoriteDetails>
       <S.FavoriteDetailsTitle>FAVORITOS</S.FavoriteDetailsTitle>
       <S.FavoriteDetailsButtonGroup>
-        <ButtonToggle active={false} value="Jogos Favoritos" />
-        <ButtonToggle active={false} value="Gêneros Favoritos" />
+        <ButtonToggle
+          onClick={() => onChangeActiveFavoriteType(FavoriteType.JOGOS)}
+          active={activeFavoriteType === FavoriteType.JOGOS}
+          value="Jogos Favoritos"
+        />
+        <ButtonToggle
+          onClick={() => onChangeActiveFavoriteType(FavoriteType.GENEROS)}
+          active={activeFavoriteType === FavoriteType.GENEROS}
+          value="Gêneros Favoritos"
+        />
       </S.FavoriteDetailsButtonGroup>
       <S.FavoriteDetailsList>
         <FavoriteItemList
@@ -33,9 +51,8 @@ const FavoriteDetails = ({ favorites }: FavoriteDetailsProps) => {
             Boolean(favorites.length) ? (
               favorites.map((item, index) => (
                 <FavoriteItem
-                  game={item.game}
-                  quantity={item.game.idNumber}
-                  genre={item.genre}
+                  onRemoveItem={() => onRemoveItem(item.id)}
+                  game={item}
                   key={`FavoriteDetails-${index}`}
                 />
               ))

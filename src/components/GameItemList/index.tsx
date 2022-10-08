@@ -1,17 +1,17 @@
-import { games } from "mocks/game";
+import { mocksgames } from "mocks/game";
 import * as S from "./style";
 interface GameItemListProps {
   children: React.ReactNode;
 }
 
-const GameItemList = ({ children }: GameItemListProps) => {
+const GameItemList = ({ children }: any) => {
   return (
     <section>
       <S.GameItemListHeader>
         <S.GameItemListHeaderTitle>Escolha seu jogo</S.GameItemListHeaderTitle>
         <S.GameItemListHeaderSelect>
           <option value="default">Selecionar</option>
-          {games.map((game) => { return (<option value="">{ game.title}</option>)})}
+          {mocksgames.map((game) => { return (<option key={game.id} value="">{ game.title}</option>)})}
         </S.GameItemListHeaderSelect>
       </S.GameItemListHeader>
       <S.GameItemList>{children}</S.GameItemList>

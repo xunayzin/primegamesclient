@@ -2,25 +2,26 @@ import * as S from "./style";
 import { ReactComponent as Trash } from "assets/icons/trash.svg";
 import { ButtonHTMLAttributes, useEffect, useState } from "react";
 import { GameResponse } from "types/Game";
-import { GenreItemType } from "types/GenreItemType";
 
 type DivType = ButtonHTMLAttributes<HTMLDivElement>;
 
 export type FavoriteItemProps = {
   game: GameResponse;
-  genre: GenreItemType["genre"];
-  quantity: number
+  genre?: string;
+  idNumber?: number;
   observation?: string;
+  onRemoveItem?: () => void;
 } & DivType;
 
 const FavoriteItem = ({
   game,
   genre,
-  quantity = game.idNumber ,
+  idNumber, 
   observation = "",
+  onRemoveItem,
   ...props
 }: FavoriteItemProps) => {
-  const [quantityState, setQuantityState] = useState(quantity);
+  const [quantityState, setQuantityState] = useState(idNumber);
   return (
     <S.FavoriteItem {...props} role="listitem">
       <S.FavoriteItemLeftTop>
@@ -37,8 +38,8 @@ const FavoriteItem = ({
         </S.FavoriteItemGame>
       </S.FavoriteItemLeftTop>
       <S.FavoriteItemRight>
-        <S.FavoriteItemRightTotalGames>{Number(quantityState)}</S.FavoriteItemRightTotalGames>
-        <S.FavoriteItemRightTrash>
+        <S.FavoriteItemRightTotalGames>Total de jogos:{Number(quantityState)}</S.FavoriteItemRightTotalGames>
+        <S.FavoriteItemRightTrash onClick={onRemoveItem}>
           <Trash />
         </S.FavoriteItemRightTrash>
       </S.FavoriteItemRight>

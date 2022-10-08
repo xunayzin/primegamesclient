@@ -8,5 +8,6 @@ export interface GameResponse {
   gameplayYoutubeUrl: string;
   createdAt: string;
   updatedAt: string;
-  idNumber: number
+  idNumber: number;
+  genre: string;
 }
